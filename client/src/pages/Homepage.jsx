@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { statuses, data } from '../data/index';
+import Dustbin from './Dustbin';
+import Box from './Box';
 
 const Homepage = (props) => {
   return (
@@ -11,11 +13,15 @@ const Homepage = (props) => {
             <div key={status} className="card__div">
               <h2>{s.status.toUpperCase()}</h2>
               <div>
-                {data
+                {/* {data
                   .filter((d) => d.status === s.status)
                   .map((item, index) => (
-                    <div key={index}>{item.title}</div>
-                  ))}
+                    <Captions name={item.title} />
+                  ))} */}
+
+                <Box name="Green" />
+                <Box name="Blue" />
+                <Box name="Yellow" />
               </div>
             </div>
           );
@@ -23,7 +29,7 @@ const Homepage = (props) => {
       </div>
       <div className="dropzone__div">
         <h1>Drop here</h1>
-        <div id="drop__content__here"></div>
+        <Dustbin id="drop__content__here" />
       </div>
     </div>
   );
